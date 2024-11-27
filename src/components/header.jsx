@@ -1,13 +1,16 @@
 import { Link } from "react-router-dom";
+import "../styles/header.css";
 
 export default function Header() {
   return (
-    <div>
+    <div className="header">
       <Link to="/">Shop.AI</Link>
       {/* Add SearchBar */}
-      <Link to="/">Home</Link>
-      <Link to="/shop">Shop</Link>
-      <Link to="/cart">Cart</Link>
+      <div className="navLinks">
+        <Link to="/">Home</Link>
+        <Link to="/shop">Shop</Link>
+        <Link to="/cart">Cart</Link>
+      </div>
     </div>
   );
 }
