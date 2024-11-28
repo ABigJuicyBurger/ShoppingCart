@@ -1,7 +1,7 @@
 import { ProductProps } from "../types/ProductTypes";
 import studyBuddyPhoto from "../assets/StudyBuddy.png";
 
-export default function StudyBuddy(preview = false): ProductProps {
+export default function StudyBuddy({ preview = false }): ProductProps {
   const ID: string = "Study Buddy";
   const skills: string[] = ["Note taking", "Time management", "Organization"];
   const price: number = 499;

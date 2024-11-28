@@ -1,7 +1,7 @@
 import { ProductProps } from "../types/ProductTypes";
 import lifeCoachPhoto from "../assets/LifeCoach.png";
 
-export default function LifeCoach(preview = false): ProductProps {
+export default function LifeCoach({ preview = false }): ProductProps {
   const ID = "Life Coach";
   const skills = ["Time management", "Goal setting", "Stress management"];
   const price = 699;

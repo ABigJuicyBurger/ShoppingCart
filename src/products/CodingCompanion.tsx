@@ -1,4 +1,5 @@
 import codingCompanionPhoto from "../assets/CodingCompanion.png";
+import "../styles/item.css";
 
 type CodingCompanionProps = {
   name: string;
@@ -42,7 +43,6 @@ export default function CodingCompanion({
           </li>
         ))}
       </ul>
-      <img src={avatarUrl} alt="Avatar"></img>
       <h2>${price}</h2>
     </div>
   );
