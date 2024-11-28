@@ -24,7 +24,7 @@ function WelcomeMessage() {
         <>
           <div className="welcomeMessage">
             <h1>Experience the future with Shop.AI</h1>
-            <p>
+            <p className="mainParagraph">
               Discover your perfect AI companion! Our cutting-edge artificial
               intelligence companions are designed to provide meaningful
               conversations, assistance, and companionship. Whether you&apos;re

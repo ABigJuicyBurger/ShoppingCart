@@ -38,11 +38,12 @@ export default function Shop() {
 
   return (
     <div>
-      <h1>Our AI Companions</h1>
       {isProductPage ? (
         <Outlet />
       ) : (
         <div>
+          <h1>Our AI Companions</h1>
+
           <div className="featuredItems">
             <div className="cardContainer">
               <Link to="/shop/item/coding-companion">

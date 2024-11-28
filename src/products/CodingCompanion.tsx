@@ -31,7 +31,7 @@ export default function CodingCompanion({
   }
 
   return (
-    <div className="fullDisplay">
+    <div className="productDetails">
       <h3>{ID}</h3>
       <img src={avatarUrl} alt="Avatar" />
       <p>{description}</p>
