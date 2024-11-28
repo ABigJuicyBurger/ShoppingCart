@@ -30,8 +30,9 @@ export default function CodingCompanion({
   }
 
   return (
-    <div>
+    <div className="fullDisplay">
       <h3>{ID}</h3>
+      <img src={avatarUrl} alt="Avatar" />
       <p>{description}</p>
       <h2>Skills</h2>
       <ul>
@@ -41,8 +42,7 @@ export default function CodingCompanion({
           </li>
         ))}
       </ul>
-      <h2>{/*Avatar*/}</h2>
-      <a href={avatarUrl}></a>
+      <img src={avatarUrl} alt="Avatar"></img>
       <h2>${price}</h2>
     </div>
   );

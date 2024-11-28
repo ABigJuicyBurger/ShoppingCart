@@ -4,7 +4,9 @@ import "../styles/header.css";
 export default function Header() {
   return (
     <div className="header">
-      <Link to="/">Shop.AI</Link>
+      <Link to="/" className="title">
+        Shop.AI
+      </Link>
       {/* Add SearchBar */}
       <div className="navLinks">
         <Link to="/">Home</Link>

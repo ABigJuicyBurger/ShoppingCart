@@ -1,11 +1,11 @@
 import { ProductProps } from "../types/ProductTypes";
 import studyBuddyPhoto from "../assets/StudyBuddy.png";
 
-export default function StudyBuddy({ preview = false }: ProductProps) {
-  const ID = "Study Buddy";
-  const skills = ["Note taking", "Time management", "Organization"];
-  const price = 499;
-  const description =
+export default function StudyBuddy(preview = false): ProductProps {
+  const ID: string = "Study Buddy";
+  const skills: string[] = ["Note taking", "Time management", "Organization"];
+  const price: number = 499;
+  const description: string =
     "Our Study Buddy is an AI-powered tool that helps students organize their study materials, manage their time, and stay on top of their assignments. It provides reminders, study guides, and flashcards to help students learn more effectively.";
   const avatarUrl = studyBuddyPhoto;
 
@@ -21,8 +21,9 @@ export default function StudyBuddy({ preview = false }: ProductProps) {
   }
 
   return (
-    <div>
+    <div className="fullDisplay">
       <h3>{ID}</h3>
+      <img src={avatarUrl} alt="Avatar" />
       <p>{description}</p>
       <h2>Skills</h2>
       <ul>
@@ -32,8 +33,6 @@ export default function StudyBuddy({ preview = false }: ProductProps) {
           </li>
         ))}
       </ul>
-      <h2>{/*Avatar*/}</h2>
-      <a href={avatarUrl}></a>
       <h2>${price}</h2>
     </div>
   );

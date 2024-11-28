@@ -5,7 +5,7 @@ export default function LifeCoach(preview = false): ProductProps {
   const ID = "Life Coach";
   const skills = ["Time management", "Goal setting", "Stress management"];
   const price = 699;
-  const description =
+  const description: string =
     "Our Life Coach is an AI-powered tool that helps individuals set and achieve their goals, manage their time effectively, and reduce stress. It provides personalized guidance, motivation, and accountability to help individuals live a more fulfilling life.";
   const avatarUrl = lifeCoachPhoto;
 
@@ -21,8 +21,9 @@ export default function LifeCoach(preview = false): ProductProps {
   }
 
   return (
-    <div>
+    <div className="fullDisplay">
       <h3>{ID}</h3>
+      <img src={avatarUrl} alt="Avatar" />
       <p>{description}</p>
       <h2>Skills</h2>
       <ul>
@@ -32,8 +33,6 @@ export default function LifeCoach(preview = false): ProductProps {
           </li>
         ))}
       </ul>
-      <h2>{/*Avatar*/}</h2>
-      <a href={avatarUrl}></a>
       <h2>${price}</h2>
     </div>
   );
