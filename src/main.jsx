@@ -5,6 +5,7 @@ import App from "./components/App.jsx";
 import Shop from "./components/Shop.tsx";
 import WelcomeMessage from "./components/WelcomeMessage.tsx";
 import Products from "./components/Products.tsx";
+import ShoppingCart from "./components/ShoppingCart.tsx";
 // import Shop from "./components/Shop.tsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
@@ -29,7 +30,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/cart",
-        // element: <Cart />,
+        element: <ShoppingCart />,
       },
     ],
   },

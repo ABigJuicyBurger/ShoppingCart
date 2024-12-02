@@ -13,7 +13,10 @@ export default function AddToCart({ productInfo }) {
   };
 
   const addProducttoCart = () => {
+    console.log("Adding to cart:", productInfo);
     addToCart({
+      name: productInfo.name,
+      price: productInfo.price,
       ...productInfo,
       quantity: quantity,
     });
