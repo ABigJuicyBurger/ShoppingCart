@@ -1,6 +1,7 @@
 import { state, useEffect, useState } from "react";
 import { Link, Outlet } from "react-router-dom";
 import { useLocation } from "react-router-dom";
+import { useOutletContext } from "react-router-dom";
 
 import "../styles/WelcomeMessage.css";
 import CreativeWriter from "../products/CreativeWriter";
@@ -10,6 +11,7 @@ import CodingCompanion from "../products/CodingCompanion";
 import EntertainmentAI from "../products/EntertainmentAI";
 
 export default function Shop() {
+  const context = useOutletContext();
   const [loading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
   const [data, setData] = useState(null);
@@ -39,7 +41,7 @@ export default function Shop() {
   return (
     <div>
       {isProductPage ? (
-        <Outlet />
+        <Outlet context={context} />
       ) : (
         <div>
           <h1>Our AI Companions</h1>

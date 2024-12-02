@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Outlet } from "react-router-dom";
+import { useOutletContext } from "react-router-dom";
 
 import Header from "./header";
 // import Footer from "./components/Footer";
@@ -8,10 +9,17 @@ import Header from "./header";
 import "../styles/App.css";
 
 function App() {
+  const [cartItems, setCartItems] = useState([]);
+
+  const addToCart = (item) => {
+    const itemsToAdd = Array(item.quantity).fill(item);
+    setCartItems([...cartItems, ...itemsToAdd]);
+  };
+
   return (
     <>
-      <Header />
-      <Outlet />
+      <Header cartItems={cartItems} />
+      <Outlet context={{ addToCart, cartItems }} />
       {/* <Footer /> */}
     </>
   );

@@ -5,6 +5,7 @@ import CreativeWriter from "../products/CreativeWriter.tsx";
 import EntertainmentAI from "../products/EntertainmentAI.tsx";
 import { useParams } from "react-router-dom";
 import AddToCart from "./addToCart.tsx";
+import { useOutletContext } from "react-router-dom";
 
 const productComponents = {
   "coding-companion": CodingCompanion,
@@ -15,15 +16,17 @@ const productComponents = {
 };
 
 function Products() {
+  const { addToCart } = useOutletContext();
   const { id } = useParams();
   console.log("Current product id:", id);
 
   const ProductComponent = productComponents[id];
+
   return (
     <div className="fullDisplay">
-      <ProductComponent preview={false} />
+      <ProductComponent preview={false} addToCart={addToCart} />
       <div className="cartSection">
-        <AddToCart />
+        <AddToCart productInfo={productComponents[id]} />
       </div>
     </div>
   );

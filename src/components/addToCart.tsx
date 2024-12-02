@@ -1,6 +1,8 @@
 import { useState } from "react";
+import { useOutletContext } from "react-router-dom";
 
-export default function AddToCart() {
+export default function AddToCart({ productInfo }) {
+  const { addToCart } = useOutletContext();
   const [quantity, setQuantity] = useState(1);
 
   const increaseNumber = () => {
@@ -8,6 +10,13 @@ export default function AddToCart() {
   };
   const decreaseNumber = () => {
     setQuantity((prev) => prev - 1);
+  };
+
+  const addProducttoCart = () => {
+    addToCart({
+      ...productInfo,
+      quantity: quantity,
+    });
   };
 
   return (
@@ -20,7 +29,7 @@ export default function AddToCart() {
         placeholder="1"
       ></input>
       <button onClick={increaseNumber}>+</button>
-      <button>Add to Cart</button>
+      <button onClick={addProducttoCart}>Add to Cart</button>
     </div>
   );
 }
