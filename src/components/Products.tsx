@@ -6,8 +6,21 @@ import EntertainmentAI from "../products/EntertainmentAI.tsx";
 import { useParams } from "react-router-dom";
 import AddToCart from "./addToCart.tsx";
 import { useOutletContext } from "react-router-dom";
+import {
+  OutletContext,
+  PathParams,
+  ProductProps,
+} from "../types/ProductTypes.ts";
 
-const productComponents = {
+type ProductComponent = {
+  component: any;
+  price: number;
+  name: string;
+};
+
+const productComponents: {
+  [key: string]: ProductComponent;
+} = {
   "coding-companion": {
     component: CodingCompanion,
     price: 999,
@@ -36,19 +49,23 @@ const productComponents = {
 };
 
 function Products() {
-  const { addToCart } = useOutletContext();
-  const { id } = useParams();
-  console.log("Current product id:", id);
+  const { addToCart } = useOutletContext<OutletContext>();
+  const { productid } = useParams<PathParams>();
+  console.log("Current product productid:", productid);
 
-  const ProductComponent = productComponents[id].component;
+  const product: ProductComponent | undefined =
+    productComponents[String(productid)];
+  const ProductComponent: undefined | any = product?.component;
   const productInfo = {
-    name: productComponents[id].name,
-    price: productComponents[id].price,
+    name: productComponents[String(productid)].name,
+    price: productComponents[String(productid)].price,
   };
 
   return (
     <div className="fullDisplay">
-      <ProductComponent preview={false} addToCart={addToCart} />
+      {ProductComponent ? (
+        <ProductComponent preview={false} addToCart={addToCart} />
+      ) : null}
       <div className="cartSection">
         <AddToCart productInfo={productInfo} />
       </div>

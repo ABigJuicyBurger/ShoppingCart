@@ -34,6 +34,7 @@ function ShoppingCart() {
         ))}
       </ul>
       <p>Total: ${total}</p>
+      <a href>Checkout</a>
     </div>
   );
 }

@@ -1,22 +1,25 @@
 import codingCompanionPhoto from "../assets/CodingCompanion.png";
 import "../styles/item.css";
 
-type CodingCompanionProps = {
+const ID: string = "Coding Companion";
+
+export default function CodingCompanion({
+  preview = false,
+  name = "Coding Companion",
+  skills = ["Python", "JavaScript", "HTML"],
+  price = 999,
+  description = "Our Coding Companion is an AI-powered tool that helps developers write code faster and more efficiently. It provides real-time suggestions, code snippets, and error checking to help developers write better code.",
+}: {
   name: string;
   skills: string[];
   price: number;
   description: string;
   preview?: boolean;
-};
-
-export default function CodingCompanion({
-  preview = false,
-}: CodingCompanionProps) {
-  const ID: string = "Coding Companion";
-  const skills: string[] = ["Python", "JavaScript", "HTML"];
-  const price: number = 999;
-  const description: string =
-    "Our Coding Companion is an AI-powered tool that helps developers write code faster and more efficiently. It provides real-time suggestions, code snippets, and error checking to help developers write better code.";
+}) {
+  // const skills: string[] = ["Python", "JavaScript", "HTML"];
+  // const price: number = 999;
+  // const description: string =
+  //   "Our Coding Companion is an AI-powered tool that helps developers write code faster and more efficiently. It provides real-time suggestions, code snippets, and error checking to help developers write better code.";
   const avatarUrl = codingCompanionPhoto;
 
   if (preview) {

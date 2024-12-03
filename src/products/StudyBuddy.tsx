@@ -1,12 +1,22 @@
 import { ProductProps } from "../types/ProductTypes";
 import studyBuddyPhoto from "../assets/StudyBuddy.png";
 
-export default function StudyBuddy({ preview = false }): ProductProps {
-  const ID: string = "Study Buddy";
-  const skills: string[] = ["Note taking", "Time management", "Organization"];
-  const price: number = 499;
-  const description: string =
-    "Our Study Buddy is an AI-powered tool that helps students organize their study materials, manage their time, and stay on top of their assignments. It provides reminders, study guides, and flashcards to help students learn more effectively.";
+function addTwoNumbers(num1: number, num2: number): number {
+  return num1 + num2;
+}
+const ID: string = "Study Buddy";
+const SKILLS: string[] = ["Note taking", "Time management", "Organization"];
+const PRICE: number = 499;
+const DESCRIPTION: string =
+  "Our Study Buddy is an AI-powered tool that helps students organize their study materials, manage their time, and stay on top of their assignments. It provides reminders, study guides, and flashcards to help students learn more effectively.";
+
+export default function StudyBuddy({
+  name = ID,
+  skills = SKILLS,
+  price = PRICE,
+  description = DESCRIPTION,
+  preview = false,
+}: ProductProps): React.JSX.Element {
   const avatarUrl = studyBuddyPhoto;
 
   if (preview) {

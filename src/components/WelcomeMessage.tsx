@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 
 import StudyBuddy from "../products/StudyBuddy";

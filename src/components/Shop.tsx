@@ -59,7 +59,7 @@ export default function Shop() {
             </div>
             <div className="cardContainer">
               <Link to="/shop/item/creative-writer">
-                <CreativeWriter preview={true} />
+                <CreativeWriter preview={true} description="wqieubw" />
               </Link>
             </div>
             <div className="cardContainer">

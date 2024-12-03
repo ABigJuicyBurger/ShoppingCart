@@ -1,7 +1,7 @@
 import { ProductProps } from "../types/ProductTypes";
 import creativeWriterPhoto from "../assets/CreativeWriter.png";
 
-export default function Creativewriter({ preview = false }): ProductProps {
+export default function CreativeWriter({ preview = false }: ProductProps) {
   const ID = "CreativeWriter";
   const skills = ["Creative Writing", "Storytelling", "Plot Structure"];
   const price = 399;
