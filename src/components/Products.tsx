@@ -15,22 +15,22 @@ const productComponents = {
   },
   "creative-writer": {
     component: CreativeWriter,
-    price: 999,
+    price: 399,
     name: "Creative Writer",
   },
   "entertainment-ai": {
     component: EntertainmentAI,
-    price: 999,
+    price: 299,
     name: "Entertainment AI",
   },
   "life-coach": {
     component: LifeCoach,
-    price: 999,
+    price: 699,
     name: "Life Coach",
   },
   "study-buddy": {
     component: StudyBuddy,
-    price: 999,
+    price: 499,
     name: "Study Buddy",
   },
 };

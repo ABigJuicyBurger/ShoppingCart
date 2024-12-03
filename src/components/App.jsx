@@ -12,8 +12,14 @@ function App() {
   const [cartItems, setCartItems] = useState([]);
 
   const addToCart = (item) => {
-    const itemsToAdd = Array(item.quantity).fill(item);
-    setCartItems([...cartItems, ...itemsToAdd]);
+    setCartItems([
+      ...cartItems,
+      {
+        name: item.name,
+        price: item.price,
+        quantity: item.quantity,
+      },
+    ]);
   };
 
   return (
