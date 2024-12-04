@@ -4,12 +4,11 @@ import { useEffect } from "react";
 import "../styles/App.css";
 
 import Header from "./header";
+import Footer from "./footer";
 import {
   saveToLocalStorage,
   loadfromLocalStorage,
 } from "./API/LocalStorage.tsx";
-
-// import Footer from "./components/Footer";
 
 interface CartItem {
   name: string;
@@ -50,7 +49,7 @@ function App() {
       <div className="content">
         <Outlet context={{ addToCart, cartItems }} />
       </div>
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 }

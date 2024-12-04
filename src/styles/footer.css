@@ -1,14 +1,12 @@
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.header a {
+.footer a {
   text-decoration: none;
   color: #333;
   font-weight: bold;
   transition: color 0.3s ease;
+}
+
+.footer img {
+  width: 50px;
 }
 
 .title {
@@ -23,9 +21,12 @@
 
 .navLinks {
   display: flex;
+  justify-content: space-between;
   gap: 20px;
 }
 
-.cartCount {
-  background-color: rgb(43, 245, 43);
+.gitHub {
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
