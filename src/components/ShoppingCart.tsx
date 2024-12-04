@@ -1,11 +1,13 @@
 import { useOutletContext } from "react-router-dom";
 import Products from "./Products";
 import { Link } from "react-router-dom";
+import "../styles/ShoppingCart.css";
 
 interface CartItem {
   name: string;
   price: number;
   quantity: number;
+  avatarUrl: string;
 }
 
 interface OutletContext {
@@ -35,17 +37,30 @@ function ShoppingCart() {
   }
 
   return (
-    <div>
+    <div className="cart-container">
       <h1>Shopping Cart</h1>
       <ul>
-        {cartItems.map((item) => (
-          <li key={null}>
-            {item.name} - ${item.price} x {item.quantity}
-          </li>
-        ))}
+        {cartItems.map(
+          (item) => (
+            console.log("Avatar URL:", item.avatarUrl),
+            (
+              <li className="cart-item" key={null}>
+                <img src={item.avatarUrl} alt="{item.name}" />
+                <div className="item-details">
+                  <h3>{item.name}</h3>
+                  <span className="item-price">
+                    ${item.price} x {item.quantity}
+                  </span>
+                </div>
+              </li>
+            )
+          )
+        )}
       </ul>
-      <p>Total: ${total}</p>
-      <a>Checkout</a>
+      <div className="cart-total">
+        <p>Total: ${total}</p>
+        <a>Checkout</a>
+      </div>
     </div>
   );
 }

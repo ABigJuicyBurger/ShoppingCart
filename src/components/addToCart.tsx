@@ -21,8 +21,9 @@ export default function AddToCart({ productInfo }) {
     addToCart({
       name: productInfo.name,
       price: productInfo.price,
-      ...productInfo,
+      avatarUrl: productInfo.avatarUrl,
       quantity: quantity,
+      ...productInfo,
     });
   };
 

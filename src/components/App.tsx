@@ -11,6 +11,7 @@ interface CartItem {
   name: string;
   price: number;
   quantity: number;
+  avatarUrl: string;
 }
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
         name: item.name,
         price: item.price,
         quantity: item.quantity,
+        avatarUrl: item.avatarUrl,
       },
     ]);
   };

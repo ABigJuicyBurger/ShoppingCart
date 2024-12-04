@@ -11,11 +11,17 @@ import {
   PathParams,
   ProductProps,
 } from "../types/ProductTypes.ts";
+import CodingCompanionPhoto from "../assets/CodingCompanion.png";
+import CreativeWriterPhoto from "../assets/CreativeWriter.png";
+import EntertainmentAIPhoto from "../assets/EntertainmentAI.png";
+import LifeCoachPhoto from "../assets/LifeCoach.png";
+import StudyBuddyPhoto from "../assets/StudyBuddy.png";
 
 type ProductComponent = {
   component: any;
   price: number;
   name: string;
+  avatarUrl: string;
 };
 
 const productComponents: {
@@ -25,26 +31,31 @@ const productComponents: {
     component: CodingCompanion,
     price: 999,
     name: "Coding Companion",
+    avatarUrl: CodingCompanionPhoto,
   },
   "creative-writer": {
     component: CreativeWriter,
     price: 399,
     name: "Creative Writer",
+    avatarUrl: CreativeWriterPhoto,
   },
   "entertainment-ai": {
     component: EntertainmentAI,
     price: 299,
     name: "Entertainment AI",
+    avatarUrl: EntertainmentAIPhoto,
   },
   "life-coach": {
     component: LifeCoach,
     price: 699,
     name: "Life Coach",
+    avatarUrl: LifeCoachPhoto,
   },
   "study-buddy": {
     component: StudyBuddy,
     price: 499,
     name: "Study Buddy",
+    avatarUrl: StudyBuddyPhoto,
   },
 };
 
@@ -59,7 +70,9 @@ function Products() {
   const productInfo = {
     name: productComponents[String(productid)].name,
     price: productComponents[String(productid)].price,
+    avatarUrl: productComponents[String(productid)].avatarUrl,
   };
+  console.log("Product Info:", productInfo);
 
   return (
     <div className="fullDisplay">
