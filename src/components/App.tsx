@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Outlet } from "react-router-dom";
-import { useOutletContext } from "react-router-dom";
 
 import Header from "./header";
 // import Footer from "./components/Footer";
@@ -8,8 +7,14 @@ import Header from "./header";
 // import CodingCompanion from "./components/CodingCompanion";
 import "../styles/App.css";
 
+interface CartItem {
+  name: string;
+  price: number;
+  quantity: number;
+}
+
 function App() {
-  const [cartItems, setCartItems] = useState([]);
+  const [cartItems, setCartItems] = useState<CartItem[]>([]);
 
   const addToCart = (item) => {
     setCartItems([

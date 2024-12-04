@@ -1,4 +1,4 @@
-import { state, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, Outlet } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import { useOutletContext } from "react-router-dom";
@@ -10,11 +10,19 @@ import LifeCoach from "../products/LifeCoach";
 import CodingCompanion from "../products/CodingCompanion";
 import EntertainmentAI from "../products/EntertainmentAI";
 
+interface Product {
+  id: number;
+  title: string;
+  price: number;
+  description: string;
+  category: string;
+}
+
 export default function Shop() {
   const context = useOutletContext();
   const [loading, setIsLoading] = useState(true);
-  const [error, setError] = useState(null);
-  const [data, setData] = useState(null);
+  const [error, setError] = useState<string | null>(null);
+  const [data, setData] = useState<Product[] | null>(null);
 
   async function getShoppingItems() {
     setIsLoading(true);
@@ -25,7 +33,7 @@ export default function Shop() {
       console.log(fetchedData);
       setData(fetchedData);
     } catch (err) {
-      setError("failed to fetch data");
+      setError(err instanceof Error ? err.message : "Failed to fetch data");
     } finally {
       setIsLoading(false);
     }
@@ -37,6 +45,20 @@ export default function Shop() {
 
   const location = useLocation();
   const isProductPage = location.pathname.includes("/item");
+
+  const dataProducts = data?.filter(
+    (item) =>
+      item.category === "electronics" &&
+      (item.id === 10 || item.id === 11 || item.id === 12)
+  );
+
+  const dataProductsComponent = dataProducts?.map((techproduct) => (
+    <div key={techproduct.id} className="cardContainer">
+      <h3>{techproduct.title}</h3>
+      <p>{techproduct.description}</p>
+      <h2>${techproduct.price}</h2>
+    </div>
+  ));
 
   return (
     <div>
@@ -72,6 +94,7 @@ export default function Shop() {
                 <StudyBuddy preview={true} />
               </Link>
             </div>
+            {/* {dataProductsComponent} */}
           </div>
         </div>
       )}

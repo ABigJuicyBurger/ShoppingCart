@@ -1,7 +1,15 @@
 import { Link } from "react-router-dom";
 import "../styles/header.css";
 
-export default function Header({ cartItems }) {
+interface HeaderProps {
+  cartItems: {
+    quantity: number,
+    price: Number,
+    name: String,
+  }[];
+}
+
+export default function Header({ cartItems }: HeaderProps) {
   const totalItems = cartItems.reduce(
     (total, item) => total + item.quantity,
     0

@@ -2,8 +2,19 @@ import { useOutletContext } from "react-router-dom";
 import Products from "./Products";
 import { Link } from "react-router-dom";
 
+interface CartItem {
+  name: string;
+  price: number;
+  quantity: number;
+}
+
+interface OutletContext {
+  cartItems: CartItem[];
+  addToCart: (item: CartItem) => void;
+}
+
 function ShoppingCart() {
-  const context = useOutletContext();
+  const context = useOutletContext<OutletContext>();
   console.log("Full context:", context);
   const { cartItems } = context;
 
@@ -28,13 +39,13 @@ function ShoppingCart() {
       <h1>Shopping Cart</h1>
       <ul>
         {cartItems.map((item) => (
-          <li key={item.id}>
+          <li key={null}>
             {item.name} - ${item.price} x {item.quantity}
           </li>
         ))}
       </ul>
       <p>Total: ${total}</p>
-      <a href>Checkout</a>
+      <a>Checkout</a>
     </div>
   );
 }

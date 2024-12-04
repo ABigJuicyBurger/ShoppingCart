@@ -1,8 +1,12 @@
 import { useState } from "react";
 import { useOutletContext } from "react-router-dom";
 
+interface ContextType {
+  addToCart: (item: any) => void;
+}
+
 export default function AddToCart({ productInfo }) {
-  const { addToCart } = useOutletContext();
+  const { addToCart } = useOutletContext<ContextType>();
   const [quantity, setQuantity] = useState(1);
 
   const increaseNumber = () => {
