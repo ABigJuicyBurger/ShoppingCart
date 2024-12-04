@@ -1,11 +1,15 @@
 import { useState } from "react";
 import { Outlet } from "react-router-dom";
+import { useEffect } from "react";
+import "../styles/App.css";
 
 import Header from "./header";
+import {
+  saveToLocalStorage,
+  loadfromLocalStorage,
+} from "./API/LocalStorage.tsx";
+
 // import Footer from "./components/Footer";
-// import StudyBuddy from "./components/StudyBuddy";
-// import CodingCompanion from "./components/CodingCompanion";
-import "../styles/App.css";
 
 interface CartItem {
   name: string;
@@ -15,6 +19,7 @@ interface CartItem {
 }
 
 function App() {
+  const savedCartItems = loadfromLocalStorage("cartItems");
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
 
   const addToCart = (item) => {
@@ -29,12 +34,24 @@ function App() {
     ]);
   };
 
+  useEffect(() => {
+    if (savedCartItems) {
+      setCartItems(savedCartItems);
+    }
+  }, []);
+
+  useEffect(() => {
+    saveToLocalStorage("cartItems", cartItems);
+  }, [cartItems]);
+
   return (
-    <>
+    <div className="app-container">
       <Header cartItems={cartItems} />
-      <Outlet context={{ addToCart, cartItems }} />
+      <div className="content">
+        <Outlet context={{ addToCart, cartItems }} />
+      </div>
       {/* <Footer /> */}
-    </>
+    </div>
   );
 }
 

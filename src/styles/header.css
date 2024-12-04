@@ -14,8 +14,11 @@
 .title {
   font-size: 24px;
   font-weight: bold;
-  color: #333;
+  color: #00f7ff;
   margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 4px rgba(0, 247, 255, 0.3);
 }
 
 .navLinks {

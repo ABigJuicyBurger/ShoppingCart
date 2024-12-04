@@ -59,7 +59,7 @@ function ShoppingCart() {
       </ul>
       <div className="cart-total">
         <p>Total: ${total}</p>
-        <a>Checkout</a>
+        <button className="checkout">Checkout</button>
       </div>
     </div>
   );
