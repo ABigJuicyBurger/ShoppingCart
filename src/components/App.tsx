@@ -11,7 +11,7 @@ import {
 } from "./API/LocalStorage.tsx";
 
 interface CartItem {
-  name: string;
+  ID: string;
   price: number;
   quantity: number;
   avatarUrl: string;
@@ -22,15 +22,23 @@ function App() {
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
 
   const addToCart = (item) => {
-    setCartItems([
-      ...cartItems,
-      {
-        name: item.name,
-        price: item.price,
-        quantity: item.quantity,
-        avatarUrl: item.avatarUrl,
-      },
-    ]);
+    setCartItems((currentItems) => {
+      const existingItem = currentItems.find(
+        (cartItem) => cartItem.ID === item.ID
+      );
+      if (existingItem) {
+        return currentItems.map((cartItem) =>
+          cartItem.ID === item.ID
+            ? { ...cartItem, quantity: cartItem.quantity + item.quantity }
+            : cartItem
+        );
+      }
+      return [...currentItems, item];
+    });
+  };
+
+  const removeFromCart = (item) => {
+    setCartItems(cartItems.filter((cartItem) => cartItem.ID !== item.ID));
   };
 
   useEffect(() => {
@@ -47,7 +55,7 @@ function App() {
     <div className="app-container">
       <Header cartItems={cartItems} />
       <div className="content">
-        <Outlet context={{ addToCart, cartItems }} />
+        <Outlet context={{ addToCart, removeFromCart, cartItems }} />
       </div>
       <Footer />
     </div>

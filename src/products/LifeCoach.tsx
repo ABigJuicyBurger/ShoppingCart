@@ -3,7 +3,7 @@ import lifeCoachPhoto from "../assets/LifeCoach.png";
 
 export default function LifeCoach({
   preview = false,
-  name = "Life Coach",
+  ID = "Life Coach",
   skills = ["Time management", "Goal setting", "Stress management"],
   price = 699,
   description = "Our Life Coach is an AI-powered tool that helps individuals set and achieve their goals, manage their time effectively, and reduce stress. It provides personalized guidance, motivation, and accountability to help individuals live a more fulfilling life.",
@@ -20,7 +20,7 @@ export default function LifeCoach({
     console.log("Preview mode is on");
     return (
       <div>
-        <h3>{name}</h3>
+        <h3>{ID}</h3>
         <img src={avatarUrl} alt="Avatar" />
         <h2>${price}</h2>
       </div>
@@ -29,7 +29,7 @@ export default function LifeCoach({
 
   return (
     <div className="productDetails">
-      <h3>{name}</h3>
+      <h3>{ID}</h3>
       <img src={avatarUrl} alt="Avatar" />
       <p>{description}</p>
       <h2>Skills</h2>

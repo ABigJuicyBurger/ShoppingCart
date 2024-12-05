@@ -1,5 +1,5 @@
 export type ProductProps = {
-  name?: string;
+  ID?: string;
   skills?: string[];
   price?: number;
   description?: string;
@@ -11,5 +11,5 @@ export type PathParams = {
   productid: string;
 };
 export type OutletContext = {
-  addToCart: (productInfo: { name: string; price: number }) => void;
+  addToCart: (productInfo: { ID: string; price: number }) => void;
 };

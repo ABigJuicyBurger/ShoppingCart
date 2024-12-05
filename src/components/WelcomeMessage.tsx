@@ -7,7 +7,7 @@ import CodingCompanion from "../products/CodingCompanion";
 import "../styles/WelcomeMessage.css";
 
 export type WelcomeMessageProps = {
-  name: string;
+  ID: string;
   price: number;
   avatarUrl?: string;
 };

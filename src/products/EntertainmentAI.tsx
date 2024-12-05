@@ -3,7 +3,7 @@ import entertainmentAIPhoto from "../assets/EntertainmentAI.png";
 
 export default function Creativewriter({
   preview = false,
-  name = "EntertainmentAI",
+  ID = "EntertainmentAI",
   skills = [
     "Entertainment Planning",
     "Interactive Games",
@@ -30,7 +30,7 @@ export default function Creativewriter({
     console.log("Preview mode is on");
     return (
       <div>
-        <h3>{name}</h3>
+        <h3>{ID}</h3>
         <img src={avatarUrl} alt="Avatar" />
         <h2>${price}</h2>
       </div>
@@ -39,7 +39,7 @@ export default function Creativewriter({
 
   return (
     <div className="productDetails">
-      <h3>{name}</h3>
+      <h3>{ID}</h3>
       <img src={avatarUrl} alt="Avatar" />
       <p>{description}</p>
       <h2>Skills</h2>

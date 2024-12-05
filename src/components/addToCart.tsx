@@ -19,7 +19,7 @@ export default function AddToCart({ productInfo }) {
   const addProducttoCart = () => {
     console.log("Adding to cart:", productInfo);
     addToCart({
-      name: productInfo.name,
+      ID: productInfo.ID,
       price: productInfo.price,
       avatarUrl: productInfo.avatarUrl,
       quantity: quantity,

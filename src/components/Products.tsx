@@ -20,7 +20,7 @@ import StudyBuddyPhoto from "../assets/StudyBuddy.png";
 type ProductComponent = {
   component: any;
   price: number;
-  name: string;
+  ID: string;
   avatarUrl: string;
 };
 
@@ -30,31 +30,31 @@ const productComponents: {
   "coding-companion": {
     component: CodingCompanion,
     price: 999,
-    name: "Coding Companion",
+    ID: "Coding Companion",
     avatarUrl: CodingCompanionPhoto,
   },
   "creative-writer": {
     component: CreativeWriter,
     price: 399,
-    name: "Creative Writer",
+    ID: "Creative Writer",
     avatarUrl: CreativeWriterPhoto,
   },
   "entertainment-ai": {
     component: EntertainmentAI,
     price: 299,
-    name: "Entertainment AI",
+    ID: "Entertainment AI",
     avatarUrl: EntertainmentAIPhoto,
   },
   "life-coach": {
     component: LifeCoach,
     price: 699,
-    name: "Life Coach",
+    ID: "Life Coach",
     avatarUrl: LifeCoachPhoto,
   },
   "study-buddy": {
     component: StudyBuddy,
     price: 499,
-    name: "Study Buddy",
+    ID: "Study Buddy",
     avatarUrl: StudyBuddyPhoto,
   },
 };
@@ -68,7 +68,7 @@ function Products() {
     productComponents[String(productid)];
   const ProductComponent: undefined | any = product?.component;
   const productInfo = {
-    name: productComponents[String(productid)].name,
+    ID: productComponents[String(productid)].ID,
     price: productComponents[String(productid)].price,
     avatarUrl: productComponents[String(productid)].avatarUrl,
   };

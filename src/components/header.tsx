@@ -3,9 +3,9 @@ import "../styles/header.css";
 
 interface HeaderProps {
   cartItems: {
-    quantity: number,
-    price: Number,
-    name: String,
+    quantity: number;
+    price: Number;
+    ID: String;
   }[];
 }
 

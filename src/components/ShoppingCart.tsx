@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import "../styles/ShoppingCart.css";
 
 interface CartItem {
-  name: string;
+  ID: string;
   price: number;
   quantity: number;
   avatarUrl: string;
@@ -13,12 +13,13 @@ interface CartItem {
 interface OutletContext {
   cartItems: CartItem[];
   addToCart: (item: CartItem) => void;
+  removeFromCart: (item: CartItem) => void;
 }
 
 function ShoppingCart() {
   const context = useOutletContext<OutletContext>();
   console.log("Full context:", context);
-  const { cartItems } = context;
+  const { cartItems, removeFromCart } = context;
 
   const total = cartItems.reduce(
     (sum, item) => sum + item.price * item.quantity,
@@ -44,13 +45,14 @@ function ShoppingCart() {
           (item) => (
             console.log("Avatar URL:", item.avatarUrl),
             (
-              <li className="cart-item" key={null}>
-                <img src={item.avatarUrl} alt="{item.name}" />
+              <li className="cart-item" key={item.ID}>
+                <img src={item.avatarUrl} alt={item.ID} />
                 <div className="item-details">
-                  <h3>{item.name}</h3>
+                  <h3>{item.ID}</h3>
                   <span className="item-price">
                     ${item.price} x {item.quantity}
                   </span>
+                  <button onClick={() => removeFromCart(item)}>Remove</button>
                 </div>
               </li>
             )

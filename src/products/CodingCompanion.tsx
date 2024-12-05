@@ -5,12 +5,12 @@ const ID: string = "Coding Companion";
 
 export default function CodingCompanion({
   preview = false,
-  name = "Coding Companion",
+  ID = "Coding Companion",
   skills = ["Python", "JavaScript", "HTML"],
   price = 999,
   description = "Our Coding Companion is an AI-powered tool that helps developers write code faster and more efficiently. It provides real-time suggestions, code snippets, and error checking to help developers write better code.",
 }: {
-  name?: string;
+  ID?: string;
   skills?: string[];
   price?: number;
   description?: string;
