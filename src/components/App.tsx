@@ -23,16 +23,20 @@ function App() {
 
   const addToCart = (item) => {
     setCartItems((currentItems) => {
+      // does product ID exist?
       const existingItem = currentItems.find(
         (cartItem) => cartItem.ID === item.ID
       );
       if (existingItem) {
-        return currentItems.map((cartItem) =>
-          cartItem.ID === item.ID
-            ? { ...cartItem, quantity: cartItem.quantity + item.quantity }
-            : cartItem
+        return currentItems.map(
+          (cartItem) =>
+            // for matching ID create new object with updated quantity
+            cartItem.ID === item.ID
+              ? { ...cartItem, quantity: cartItem.quantity + item.quantity }
+              : cartItem // leave other items unchanged
         );
       }
+      // if nonexistend, add new item
       return [...currentItems, item];
     });
   };

@@ -6,7 +6,7 @@ function addTwoNumbers(num1: number, num2: number): number {
 }
 const ID: string = "Study Buddy";
 const SKILLS: string[] = ["Note taking", "Time management", "Organization"];
-const PRICE: number = 499;
+const PRICE: number = 49.99;
 const DESCRIPTION: string =
   "Our Study Buddy is an AI-powered tool that helps students organize their study materials, manage their time, and stay on top of their assignments. It provides reminders, study guides, and flashcards to help students learn more effectively.";
 

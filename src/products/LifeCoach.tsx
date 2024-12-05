@@ -5,7 +5,7 @@ export default function LifeCoach({
   preview = false,
   ID = "Life Coach",
   skills = ["Time management", "Goal setting", "Stress management"],
-  price = 699,
+  price = 149.99,
   description = "Our Life Coach is an AI-powered tool that helps individuals set and achieve their goals, manage their time effectively, and reduce stress. It provides personalized guidance, motivation, and accountability to help individuals live a more fulfilling life.",
   avatarUrl = lifeCoachPhoto,
 }: ProductProps) {

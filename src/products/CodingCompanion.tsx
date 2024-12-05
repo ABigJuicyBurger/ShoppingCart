@@ -7,7 +7,7 @@ export default function CodingCompanion({
   preview = false,
   ID = "Coding Companion",
   skills = ["Python", "JavaScript", "HTML"],
-  price = 999,
+  price = 99.99,
   description = "Our Coding Companion is an AI-powered tool that helps developers write code faster and more efficiently. It provides real-time suggestions, code snippets, and error checking to help developers write better code.",
 }: {
   ID?: string;

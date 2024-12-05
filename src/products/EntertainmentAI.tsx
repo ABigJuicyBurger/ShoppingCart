@@ -10,7 +10,7 @@ export default function Creativewriter({
     "Virtual Events",
     "Social Engagement",
   ],
-  price = 299,
+  price = 89.99,
   description = "Our Entertainment AI companion is your personal fun coordinator, bringing joy and excitement to your daily life. From organizing virtual game nights to suggesting personalized entertainment options, it creates engaging experiences, hosts interactive games, and helps coordinate social activities. Whether you're looking for solo entertainment or group activities, it ensures you never have a dull moment.",
   avatarUrl = entertainmentAIPhoto,
 }: ProductProps) {

@@ -2,9 +2,9 @@ import { ProductProps } from "../types/ProductTypes";
 import creativeWriterPhoto from "../assets/CreativeWriter.png";
 
 export default function CreativeWriter({ preview = false }: ProductProps) {
-  const ID = "CreativeWriter";
+  const ID = "Creative Writer";
   const skills = ["Creative Writing", "Storytelling", "Plot Structure"];
-  const price = 399;
+  const price = 79.99;
   const description =
     "Our Creative Writer AI companion is your personal writing partner, helping you craft compelling stories, develop rich characters, and overcome writer's block. It provides creative suggestions, plot ideas, and writing prompts while assisting with story structure and editing to enhance your creative writing journey.";
   const avatarUrl = creativeWriterPhoto;
