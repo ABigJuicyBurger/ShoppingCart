@@ -29,31 +29,31 @@ const productComponents: {
 } = {
   "coding-companion": {
     component: CodingCompanion,
-    price: 999,
+    price: 99.99,
     ID: "Coding Companion",
     avatarUrl: CodingCompanionPhoto,
   },
   "creative-writer": {
     component: CreativeWriter,
-    price: 399,
+    price: 79.99,
     ID: "Creative Writer",
     avatarUrl: CreativeWriterPhoto,
   },
   "entertainment-ai": {
     component: EntertainmentAI,
-    price: 299,
+    price: 89.99,
     ID: "Entertainment AI",
     avatarUrl: EntertainmentAIPhoto,
   },
   "life-coach": {
     component: LifeCoach,
-    price: 699,
+    price: 149.99,
     ID: "Life Coach",
     avatarUrl: LifeCoachPhoto,
   },
   "study-buddy": {
     component: StudyBuddy,
-    price: 499,
+    price: 49.99,
     ID: "Study Buddy",
     avatarUrl: StudyBuddyPhoto,
   },
